@@ -1,0 +1,14 @@
+/* 
+  Movies.strings
+  RHDb
+
+  Created by Ricardo Hochman on 02/08/2018.
+  Copyright © 2018 Ricardo Hochman. All rights reserved.
+*/
+
+"search" = "Buscar por filmes";
+
+// Reuse identifiers
+"movieCollectionViewCell" = "movieCellIdentifier";
+
+"no.trailer.alert.title" = "Nenhum trailer encontrado para este filme";

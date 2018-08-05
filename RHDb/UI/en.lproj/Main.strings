@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "VER TRAILERS"; ObjectID = "3hT-Pl-Ieq"; */
+"3hT-Pl-Ieq.normalTitle" = "SEE TRAILERS";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "8hz-4Z-VfN"; */
+"8hz-4Z-VfN.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "ED8-b3-obh"; */
+"ED8-b3-obh.title" = "Movies";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Fgr-vt-Lb7"; */
+"Fgr-vt-Lb7.text" = "Label";
+
+/* Class = "UILabel"; text = "2012"; ObjectID = "WbD-n8-gib"; */
+"WbD-n8-gib.text" = "2012";
+
+/* Class = "UILabel"; text = "Avengers"; ObjectID = "bOB-JJ-RHk"; */
+"bOB-JJ-RHk.text" = "Avengers";
+
+/* Class = "UITableViewController"; title = "Trailers"; ObjectID = "jhO-SF-ATv"; */
+"jhO-SF-ATv.title" = "Trailers";
