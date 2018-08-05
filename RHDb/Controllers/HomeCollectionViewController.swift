@@ -9,24 +9,24 @@
 import UIKit
 
 class HomeCollectionViewController: UICollectionViewController {
-
+    
     private let searchController = UISearchController(searchResultsController: nil)
     private let itemSize = CGSize(width: 110, height: 165)
-
+    
     private var searchTerms = ""
     private var searchWasCancelled = false
-
+    
     private lazy var spacing: CGFloat = {
         self.view.layoutIfNeeded()
         let numberOfColuns = (self.view.frame.width / itemSize.width).rounded(.towardZero)
         let space = self.view.frame.width.truncatingRemainder(dividingBy: itemSize.width)
         return space / (numberOfColuns + 1)
     }()
-
+    
     lazy var viewModel: MovieListViewModel = {
         return MovieListViewModel()
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -37,7 +37,7 @@ class HomeCollectionViewController: UICollectionViewController {
     private func registerCells() {
         collectionView?.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: R.string.movies.movieCollectionViewCell())
     }
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -67,21 +67,18 @@ class HomeCollectionViewController: UICollectionViewController {
             }
         }
         
-        fetchMovie(with: "vingadores")
-        
         viewModel.initWithPersistence()
     }
     
     private func fetchMovie(with title: String) {
         viewModel.getMovie(title: title) { success in
-            print(success)
         }
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HomeCollectionViewController {
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfCells
     }
@@ -90,7 +87,7 @@ extension HomeCollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.string.movies.movieCollectionViewCell(), for: indexPath) as? MovieCollectionViewCell else {
             fatalError("Could not find correct cell")
         }
-                
+        
         cell.setup(viewModel.getCellViewModel(at: indexPath))
         return cell
     }
@@ -132,7 +129,7 @@ extension HomeCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
     }
-
+    
 }
 
 // MARK: - Search Bar
